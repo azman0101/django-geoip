@@ -1,11 +1,11 @@
 Django GeoIP
 ============
 
-.. image:: https://secure.travis-ci.org/futurecolors/django-geoip.png?branch=dev
-    :target: https://travis-ci.org/futurecolors/django-geoip
+.. image:: https://secure.travis-ci.org/azman0101/django-geoip.png?branch=dev
+    :target: https://travis-ci.org/azman0101/django-geoip
 
-.. image:: https://coveralls.io/repos/futurecolors/django-geoip/badge.png?branch=dev
-    :target: https://coveralls.io/r/futurecolors/django-geoip/
+.. image:: https://coveralls.io/repos/azman0101/django-geoip/badge.png?branch=dev
+    :target: https://coveralls.io/r/azman0101/django-geoip/
 
 App to figure out where your visitors are from by their IP address.
 
