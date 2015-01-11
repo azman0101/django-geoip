@@ -7,6 +7,7 @@ env:
   - DJANGO=1.4.14
   - DJANGO=1.5.9
   - DJANGO=1.6.6
+  - DJANGO=1.7.2
 install:
   - pip install https://github.com/django/django/archive/${DJANGO}.zip#egg=django
   - pip install -r tests/requirements.txt
