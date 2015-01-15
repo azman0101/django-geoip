@@ -2,8 +2,13 @@
 import io
 import tempfile
 import logging
-import zipfile
+try:
+    import lzma
+except ImportError:
+    from backports import lzma
 from decimal import Decimal
+import contextlib
+import tarfile
 
 import requests
 from django.conf import settings
@@ -51,7 +56,9 @@ class IpGeobase(object):
         """ Returns dict with 2 extracted filenames """
         self.logger.info('Downloading zipfile from maxmind...')
         temp_dir = tempfile.mkdtemp()
-        archive = zipfile.ZipFile(self._download_url_to_string(url))
+        with contextlib.closing(lzma.LZMAFile(self._download_url_to_string(url))) as xz:
+            archive = tarfile.open(fileobj=xz)
+
         self.logger.info('Extracting files...')
         file_cities = archive.extract(settings.IPGEOBASE_CITIES_FILENAME, path=temp_dir)
         file_cidr = archive.extract(settings.IPGEOBASE_CIDR_FILENAME, path=temp_dir)
