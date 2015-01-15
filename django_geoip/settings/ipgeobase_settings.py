@@ -4,7 +4,7 @@ from appconf import AppConf
 
 class IpGeoBaseConfig(AppConf):
     # URL, where to download ipgeobase file from
-    SOURCE_URL = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity_CSV/GeoLiteCity-latest.zip'
+    SOURCE_URL = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.xz'
 
     FILE_FIELDS_DELIMITER = "\t"
     FILE_ENCODING = 'windows-1251'
