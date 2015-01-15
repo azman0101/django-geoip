@@ -63,7 +63,6 @@ class IpGeobase(object):
         with open(temp_dir + '/' + settings.IPGEOBASE_CITIES_FILENAME, "w") as output:
             output.write(archive.read())
         archive.close()
-        file_cities = archive.extract(settings.IPGEOBASE_CITIES_FILENAME, path=temp_dir)
         return {'cities': file_cities}
 
     def _download_url_to_string(self, url):
