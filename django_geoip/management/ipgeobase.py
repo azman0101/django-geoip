@@ -56,9 +56,7 @@ class IpGeobase(object):
         """ Returns dict with 2 extracted filenames """
         self.logger.info('Downloading zipfile from maxmind...')
         temp_dir = tempfile.mkdtemp()
-        with contextlib.closing(lzma.LZMAFile(self._download_url_to_string(url))) as xz:
-            archive = tarfile.open(fileobj=xz)
-
+        archive = lzma.LZMAFile(self._download_url_to_string(url))
         self.logger.info('Extracting files...')
         file_cities = archive.extract(settings.IPGEOBASE_CITIES_FILENAME, path=temp_dir)
         file_cidr = archive.extract(settings.IPGEOBASE_CIDR_FILENAME, path=temp_dir)
