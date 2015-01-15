@@ -18,6 +18,7 @@ setup(
     install_requires=[
         'django-appconf>=0.6',
         'requests>=1.0.4',
+        'backports.lzma>=0.0.3',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
