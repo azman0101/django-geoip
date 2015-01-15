@@ -11,7 +11,7 @@ setup(
     author='Ilya Baryshev',
     author_email='baryshev@gmail.com',
     packages=find_packages(exclude=("tests", "test_app", "docs")),
-    url='https://github.com/futurecolors/django-geoip',
+    url='https://github.com/azman0101/django-geoip',
     license='MIT',
     description="App to figure out where your visitors are from by their IP address.",
     long_description=read(path.join(path.dirname(__file__), 'README.rst')),

@@ -49,7 +49,7 @@ class IpGeobase(object):
 
     def _download_extract_archive(self, url):
         """ Returns dict with 2 extracted filenames """
-        self.logger.info('Downloading zipfile from ipgeobase.ru...')
+        self.logger.info('Downloading zipfile from maxmind...')
         temp_dir = tempfile.mkdtemp()
         archive = zipfile.ZipFile(self._download_url_to_string(url))
         self.logger.info('Extracting files...')
