@@ -58,6 +58,10 @@ class IpGeobase(object):
         temp_dir = tempfile.mkdtemp()
         archive = lzma.LZMAFile(self._download_url_to_string(url))
         self.logger.info('Extracting files...')
+        with open(temp_dir + '/' + settings.IPGEOBASE_CITIES_FILENAME, "w") as output:
+            output.write(archive.read())
+        archive.close()
+
         file_cities = archive.extract(settings.IPGEOBASE_CITIES_FILENAME, path=temp_dir)
         file_cidr = archive.extract(settings.IPGEOBASE_CIDR_FILENAME, path=temp_dir)
         return {'cities': file_cities, 'cidr': file_cidr}
