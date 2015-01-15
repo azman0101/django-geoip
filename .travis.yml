@@ -20,12 +20,3 @@ matrix:
   exclude:
     - python: 3.4
       env: DJANGO=1.4.14
-deploy:
-  provider: pypi
-  user: coagulant
-  password:
-    secure: h6U+juQbC9vAOdchfJttfOKaVxjRx9DdJi6NqQICLjj2KSmn7/G7HCp5Gvc+C2P6zEFV8QVTrDwbhjm1U8jg0KTsLw9E1OXJlH6OFF3U/Urn515x8RJ5FrjMacrlHd3ZEn14cM712FiwLzc72JT/xjm1RK+hgOpFqbOvlB/FgDM=
-  on:
-    tags: true
-    repo: azman0101/django-geoip
-    branch: dev
